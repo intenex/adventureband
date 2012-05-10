@@ -1,0 +1,43 @@
+/*!
+ * AdventureBand CSS 0.1
+ */
+
+/***** For first.html up and down arrows *****/
+/* Taken from the best: reddit */
+/* {# Used to create the up and down attribute arrows #} */
+.arrow {
+margin: 2px 0px 0px 0px;
+height: 14px;
+display: inline-block; /* {# this allows the arrows to be on the same line as the input field and still act as a block (if it's not a block it doesn't display at all #} */
+cursor: pointer;
+background-repeat: no-repeat;
+width: 15px;
+margin-left: auto;
+margin-right: auto;
+}
+.arrow.up {
+background-image: url(http://www.redditstatic.com/sprite-reddit.5Idi02gXB7E.png);
+background-position: -47px -612px;
+}
+.arrow.down {
+background-image: url(http://www.redditstatic.com/sprite-reddit.5Idi02gXB7E.png);
+background-position: -102px -595px;
+}
+/***** end first.html css *****/
+
+/* {# to prevent double clicking the up and down arrows from selecting text - had to insert into the entire 'body' tag of the html document (see above) in order for it to work properly on this page #} */
+.no_selection {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+
+/* for house ASCII in town.html */
+pre.house {
+width: 450px;
+line-height: 11px;
+}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Distribute Attribute Points{% endblock %}
+
+{# LOL THIS WORKED :D - can't wrap a 'block' around an entire 'body' tag though it seems #}
+{% block body_tag_attribs %}class="no_selection"{% endblock %}
+
+{% block heading %}<h1 style="text-align: center;">Distribute Attribute Points</h1><br/>{% endblock %}
+
+{% block content %}
+
+<p style="text-align: center;">{{ intro_text }}</p>
+
+<p id="attrib_points"></p>
+
+    <form action="" method="post">{% csrf_token %}
+        {% for field in form %}
+        <p>{{ field.label }}: {{ field }}
+        <span id="up_{{ field.label }}" class="arrow up no_selection" onclick="changeAttrib('up','{{ field.label }}')"></span>
+        <span id="down_{{ field.label }}" class="arrow down no_selection" onclick="changeAttrib('down','{{ field.label }}')"></span></p>
+        {% endfor %}
+        <input type ="submit" value="Set Attributes">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block nav_venture %}<li class="active">{% endblock %}
+
+{% block notification %}
+{% if dungeon_text %}<p>{{ dungeon_text }}</p>{% endif %}
+{% endblock %}
+
+{% block heading %}<h1>The Dungeon</h1><br/>{% endblock %}
+
+{% block content %}
+
+    <p>You are in the dungeon.</p>
+
+{% endblock %}

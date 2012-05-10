@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block nav_login %}<li class="active">{% endblock %}
+
+{% block notification %}
+{% if login_text %}<p>{{ login_text }}</p>{% endif %}
+{% endblock %}
+
+{% block heading %}<h1>Login</h1><br/>{% endblock %}
+
+{% block content %}
+
+    <form action="" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type ="submit" value="Login">
+    </form>
+
+{% endblock %}

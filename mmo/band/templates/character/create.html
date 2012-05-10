@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Create an character{% endblock %}
+
+{% block nav_create %}<li class="active">{% endblock %}
+
+{% block heading %}<h1>Create a character</h1><br/>{% endblock %}
+
+{% block content %}
+
+    <form action="" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type ="submit" value="Set Attributes">
+    </form>
+
+{% endblock %}

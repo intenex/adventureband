@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Delete a character{% endblock %}
+
+{% block nav_delete %}<li class="active">{% endblock %}
+
+{% block heading %}<h1>Delete a character</h1><br/>{% endblock %}
+
+                {# A bit of an ugly hack below to display proper names for 'Class', but hey, it works! #}
+                {# Also note that the 'name' field in the radio button inputs are what tell HTML what groups of values should go together in radio inputs so that only one can be selected #}
+                {# Also remember to leave comments out of blocks so that they don't destroy your rendered html source formatting #}
+
+{% block content %}
+
+    {% if choices %}
+        <form action="" method="post">{% csrf_token %}
+            {% for character in choices %}
+            <p><input type="radio" name="character" value="{{ character.id }}"> {{ character.name }} | Class: {% ifequal character.char_class 'W' %}Warrior{% else %}{% ifequal character.char_class 'M' %}Mage{% else %}Rogue{% endifequal %}{% endifequal %} | Level: {{ character.level }}</p>
+            {% endfor %}
+            <input type ="submit" value="Delete">
+        </form>
+    {% else %}
+        <p>Sorry, but you have no characters. Please <a href='/create'>create</a> one first.</p>
+    {% endif %}
+
+{% endblock %}
